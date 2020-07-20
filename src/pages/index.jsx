@@ -1,7 +1,5 @@
 import React from 'react'
-import { graphql } from 'gatsby'
-
-import Layout from '../components/layout'
+import { graphql, Link } from 'gatsby'
 import SEO from '../components/seo'
 import Img from 'gatsby-image'
 
@@ -14,6 +12,14 @@ const IndexPage = ({ data }) => (
         Clean Romances for the
         <span className="text-red-300"> Hopeful Romantic</span>
       </h1>
+      <div className="mt-5">
+        <Link
+          to="/books"
+          className="inline-block bg-red-300 text-white py-3 px-4 rounded shadow-md"
+        >
+          Check out my books
+        </Link>
+      </div>
     </div>
   </div>
 )
