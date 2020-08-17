@@ -19,9 +19,12 @@ const Header = () => {
     }
   `)
   return (
-    <header id="top" className="mx-auto">
-      <nav id="site-menu" className="flex-row md:flex md:justify-between">
-        <div className="flex flex-row justify-between px-2 py-1 pr-4 shadow-md">
+    <header id="top" className="mx-auto w-full">
+      <nav
+        id="site-menu"
+        className="flex-row md:flex md:justify-between md:border-b-2"
+      >
+        <div className="flex flex-row justify-between px-2 py-1 pr-4 shadow-md md:shadow-none">
           <Link to="/">
             <Img
               fluid={data.headerImage.childImageSharp.fluid}
@@ -51,6 +54,16 @@ const Header = () => {
           <Link to="/books" className="w-full">
             <NavBarItem>
               <span className="text-xl">Books</span>
+            </NavBarItem>
+          </Link>
+          <Link to="/contact" className="w-full">
+            <NavBarItem>
+              <span className="text-xl">Contact</span>
+            </NavBarItem>
+          </Link>
+          <Link to="/blog" className="w-full">
+            <NavBarItem>
+              <span className="text-xl">Blog</span>
             </NavBarItem>
           </Link>
         </ul>
