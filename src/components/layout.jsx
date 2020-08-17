@@ -34,7 +34,7 @@ const Layout = ({ children, noHeader }) => {
         }}
       >
         {!noHeader && <Header />}
-        <main>{children}</main>
+        <main className="max-w-5xl mx-auto">{children}</main>
         <Footer />
       </div>
     </>

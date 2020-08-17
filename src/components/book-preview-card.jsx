@@ -10,7 +10,7 @@ import ClampLines from 'react-clamp-lines'
 
 const getLines = size => {
   if (size >= 1250) {
-    return 8
+    return 5
   } else if (size >= 640) {
     return 4
   } else if (size >= 450) {
