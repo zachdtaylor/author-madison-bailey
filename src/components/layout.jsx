@@ -10,6 +10,7 @@ import PropTypes from 'prop-types'
 import { useStaticQuery, graphql } from 'gatsby'
 
 import Header from './header'
+import Footer from './footer'
 
 const Layout = ({ children, noHeader }) => {
   const data = useStaticQuery(graphql`
@@ -24,9 +25,17 @@ const Layout = ({ children, noHeader }) => {
 
   return (
     <>
-      {!noHeader && <Header />}
-      <div>
+      <div
+        style={{
+          minHeight: '100%',
+          display: 'grid',
+          gridTemplateRows: 'auto 1fr auto',
+          gridTemplateColumns: '100%',
+        }}
+      >
+        {!noHeader && <Header />}
         <main>{children}</main>
+        <Footer />
       </div>
     </>
   )

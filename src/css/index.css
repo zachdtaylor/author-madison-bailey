@@ -4,6 +4,14 @@
 
 @tailwind utilities;
 
+html,
+body,
+#___gatsby,
+#gatsby-focus-wrapper {
+  height: 100%;
+  width: 100%;
+}
+
 body {
   @apply bg-gray-100;
 }
