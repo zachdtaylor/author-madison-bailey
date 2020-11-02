@@ -8,13 +8,15 @@ import Layout from '../../components/layout'
 const Hemiola = ({ data }) => {
   return (
     <Layout>
-      <div className="m-5">
-        <SEO title="Hemiola" />
-        <div className="border-gray-700 rounded-md shadow-lg overflow-hidden">
-          <Img fluid={data.cover.childImageSharp.fluid} />
+      <SEO title="Hemiola" />
+      <div className="m-5 sm:grid sm:grid-cols-2 sm:gap-4 md:grid-cols-3 lg:mx-32">
+        <div>
+          <div className="border-gray-700 rounded-md shadow-lg overflow-hidden">
+            <Img fluid={data.cover.childImageSharp.fluid} />
+          </div>
         </div>
-        <div className="p-3 pt-5">
-          <h1 className="text-2xl font-bold">Hemiola</h1>
+        <div className="p-3 pt-5 sm:pt-0 md:col-span-2">
+          <h1 className="text-3xl font-bold">Hemiola</h1>
           <Paragraph>
             Micah Moore is young, handsome, and newly famous. Riding high from
             his recent success as the lead in a box office hit, the world is his
