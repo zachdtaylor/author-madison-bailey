@@ -34,7 +34,10 @@ const Header = () => {
           <div
             id="hamburgerbtn"
             className="w-10 relative md:hidden"
+            role="button"
+            tabIndex="0"
             onClick={() => setMobileMenuActive(!mobileMenuActive)}
+            onKeyDown={() => setMobileMenuActive(!mobileMenuActive)}
           >
             <div className="absolute bottom-0 top-0">
               <MenuIcon />
@@ -42,9 +45,8 @@ const Header = () => {
           </div>
         </div>
         <ul
-          className={`hidden my-3 mx-5 md:flex md:flex-row ${
-            mobileMenuActive && 'active'
-          }`}
+          className={`hidden my-3 mx-5 md:flex md:flex-row ${mobileMenuActive && 'active'
+            }`}
         >
           <Link to="/" className="w-full">
             <NavBarItem>
