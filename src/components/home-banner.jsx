@@ -26,7 +26,7 @@ const HomeBanner = () => {
         }%`,
       }}
     >
-      <div className="absolute inset-0 p-6 md:p-8">
+      <div className="absolute inset-0 py-4 px-6 md:p-8">
         <div className="relative h-full md:bg-gray-100 md:bg-opacity-50 md:p-8 md:w-1/2">
           <h1 className="hidden md:text-7xl md:leading-tight md:mb-6 md:block">
             Madison
