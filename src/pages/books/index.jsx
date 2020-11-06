@@ -2,11 +2,12 @@ import React from 'react'
 import SEO from '../../components/seo'
 import BookPreviewCard from '../../components/book-preview-card'
 import Layout from '../../components/layout'
+import Margin from '../../components/margin'
 
 const Books = ({ data }) => {
   return (
     <Layout>
-      <div className="m-5">
+      <Margin>
         <SEO title="Books" />
         <h1 className="text-2xl font-bold pb-5">My Books</h1>
         <div className="sm:grid sm:grid-cols-2 lg:grid-cols-3">
@@ -20,7 +21,7 @@ const Books = ({ data }) => {
             imgFluid={data.hemiolaCover.childImageSharp.fluid}
           />
         </div>
-      </div>
+      </Margin>
     </Layout>
   )
 }

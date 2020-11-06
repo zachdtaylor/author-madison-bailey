@@ -1,14 +1,15 @@
 import React from 'react'
 import Layout from '../components/layout'
+import Margin from '../components/margin'
 import SEO from '../components/seo'
 
 const Contact = () => {
   return (
     <Layout>
-      <div className="m-5">
+      <Margin>
         <SEO title="Contact" />
         <h1 className="text-2xl font-bold pb-5">Contact Me</h1>
-      </div>
+      </Margin>
     </Layout>
   )
 }
