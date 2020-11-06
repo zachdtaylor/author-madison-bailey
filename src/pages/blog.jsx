@@ -1,14 +1,15 @@
 import React from 'react'
 import Layout from '../components/layout'
 import Margin from '../components/margin'
+import PageHeader from '../components/page-header'
 import SEO from '../components/seo'
 
 const Blog = () => {
   return (
     <Layout>
+      <PageHeader title="Blog" />
       <Margin>
         <SEO title="Blog" />
-        <h1 className="text-2xl font-bold pb-5">Blog</h1>
       </Margin>
     </Layout>
   )

@@ -3,13 +3,14 @@ import SEO from '../../components/seo'
 import BookPreviewCard from '../../components/book-preview-card'
 import Layout from '../../components/layout'
 import Margin from '../../components/margin'
+import PageHeader from '../../components/page-header'
 
 const Books = ({ data }) => {
   return (
     <Layout>
+      <PageHeader title="My Books" />
       <Margin>
         <SEO title="Books" />
-        <h1 className="text-2xl font-bold pb-5">My Books</h1>
         <div className="sm:grid sm:grid-cols-2 lg:grid-cols-3">
           <BookPreviewCard
             linkTo="/books/hemiola"
