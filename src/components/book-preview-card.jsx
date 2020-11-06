@@ -28,7 +28,7 @@ const getLines = size => {
 
 const BookPreviewCard = ({ linkTo, imgFluid, title, previewText }) => {
   const [previewLines, setPreviewLines] = useState(
-    window ? getLines(window.innerWidth) : 4
+    typeof window !== 'undefined' ? getLines(window.innerWidth) : 4
   )
   useEffect(() => {
     const handleResize = () => {
