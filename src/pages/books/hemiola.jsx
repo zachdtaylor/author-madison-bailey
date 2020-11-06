@@ -4,10 +4,12 @@ import Img from 'gatsby-image'
 import SEO from '../../components/seo'
 import Paragraph from '../../components/paragraph'
 import Layout from '../../components/layout'
+import PageHeader from '../../components/page-header'
 
 const Hemiola = ({ data }) => {
   return (
     <Layout>
+      <PageHeader title="Hemiola" />
       <SEO title="Hemiola" />
       <div className="m-5 sm:grid sm:grid-cols-2 sm:gap-4 md:grid-cols-3 lg:mx-32">
         <div>
@@ -16,7 +18,7 @@ const Hemiola = ({ data }) => {
           </div>
         </div>
         <div className="p-3 pt-5 sm:pt-0 md:col-span-2">
-          <h1 className="text-3xl font-bold">Hemiola</h1>
+          {/* <h1 className="text-3xl font-bold">Hemiola</h1> */}
           <Paragraph>
             Micah Moore is young, handsome, and newly famous. Riding high from
             his recent success as the lead in a box office hit, the world is his

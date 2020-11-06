@@ -23,7 +23,7 @@ const Layout = ({ children, noHeader }) => {
         }}
       >
         {!noHeader && <Header />}
-        <main className="mx-auto">{children}</main>
+        <main>{children}</main>
         <Footer />
       </div>
     </>
