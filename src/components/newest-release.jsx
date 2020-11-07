@@ -42,9 +42,12 @@ const NewestRelease = () => {
       </div>
       <div className="md:mx-8 lg:mx-32">
         <h2 className="text-3xl pb-3 pr-12">Read My Newest Release</h2>
-        <div className="border-gray-700 rounded-md shadow-md overflow-hidden md:grid md:grid-cols-2 md:gap-4 md:rounded-none md:shadow-none">
-          <Img fluid={newestBook.coverArt.fluid} />
-          <div className="p-4 pb-0">
+        <div className="border-gray-700 rounded-md shadow-md overflow-hidden md:grid md:grid-cols-3 md:gap-4 md:rounded-none md:shadow-none">
+          <Img
+            fluid={newestBook.coverArt.fluid}
+            imgStyle={{ height: 'auto' }}
+          />
+          <div className="p-4 pb-0 md:pt-0 md:col-span-2">
             <h1 className="text-2xl font-bold">{newestBook.title}</h1>
             {newestBook.description.content
               .slice(0, 2)
