@@ -14,7 +14,7 @@ const Books = ({ data: { books } }) => (
       <div className="sm:grid sm:grid-cols-2 lg:grid-cols-3">
         {books.edges.map(({ node: book }) => (
           <BookPreviewCard
-            linkTo={`/books/${book.title.toLowerCase()}`}
+            linkTo={book.fields.slug}
             previewText={book.description.content[0].content[0].value}
             title={book.title}
             imgFluid={book.coverArt.fluid}
@@ -34,6 +34,9 @@ export const pageQuery = graphql`
         node {
           id
           title
+          fields {
+            slug
+          }
           description {
             content {
               content {

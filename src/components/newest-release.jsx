@@ -14,6 +14,9 @@ const NewestRelease = () => {
         edges {
           node {
             title
+            fields {
+              slug
+            }
             description {
               content {
                 content {
@@ -47,10 +50,10 @@ const NewestRelease = () => {
               .slice(0, 2)
               .map(({ content }, index) => (
                 <Paragraph key={index}>{content[0].value}</Paragraph>
-              ))}{' '}
+              ))}
             <div className="text-right md:text-left">
               <Button.Link
-                to={`/books/${newestBook.title.toLowerCase()}`}
+                to={newestBook.fields.slug}
                 className="mt-3 mb-5 md:my-3"
               >
                 Read More
