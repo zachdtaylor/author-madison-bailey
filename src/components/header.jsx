@@ -12,7 +12,7 @@ const Header = () => {
       headerImage: file(relativePath: { eq: "Madison-Bailey-Submark.png" }) {
         childImageSharp {
           fluid(maxWidth: 800) {
-            ...GatsbyImageSharpFluid
+            ...GatsbyImageSharpFluid_tracedSVG
           }
         }
       }
@@ -45,8 +45,9 @@ const Header = () => {
           </div>
         </div>
         <ul
-          className={`hidden my-3 mx-5 md:flex md:flex-row ${mobileMenuActive && 'active'
-            }`}
+          className={`hidden my-3 mx-5 md:flex md:flex-row ${
+            mobileMenuActive && 'active'
+          }`}
         >
           <Link to="/" className="w-full">
             <NavBarItem>

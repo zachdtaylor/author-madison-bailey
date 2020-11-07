@@ -35,7 +35,7 @@ export const pageQuery = graphql`
     hemiolaCover: file(relativePath: { eq: "hemiola-cover.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 800) {
-          ...GatsbyImageSharpFluid
+          ...GatsbyImageSharpFluid_tracedSVG
         }
       }
     }

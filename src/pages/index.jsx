@@ -27,7 +27,7 @@ export const pageQuery = graphql`
     headerImage: file(relativePath: { eq: "Madison-Bailey-Logo-1.png" }) {
       childImageSharp {
         fluid(maxWidth: 1240) {
-          ...GatsbyImageSharpFluid
+          ...GatsbyImageSharpFluid_tracedSVG
         }
       }
     }
