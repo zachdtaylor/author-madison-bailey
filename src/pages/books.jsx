@@ -11,7 +11,7 @@ const Books = ({ data: { books } }) => (
     <PageHeader title="My Books" />
     <Margin>
       <SEO title="My Books" />
-      <div className="sm:grid sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {books.edges.map(({ node: book }) => (
           <BookPreviewCard
             linkTo={book.fields.slug}

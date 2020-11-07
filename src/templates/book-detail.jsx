@@ -5,6 +5,7 @@ import SEO from '../components/seo'
 import Paragraph from '../components/paragraph'
 import Layout from '../components/layout'
 import PageHeader from '../components/page-header'
+import PurchaseLinks from '../components/purchase-links'
 
 const BookDetail = ({ data: { book } }) => (
   <Layout>
@@ -20,6 +21,8 @@ const BookDetail = ({ data: { book } }) => (
         {book.description.content.map(({ content }, index) => {
           return <Paragraph key={index}>{content[0].value}</Paragraph>
         })}
+        <hr className="my-5" />
+        <PurchaseLinks {...book} />
       </div>
     </div>
   </Layout>
@@ -43,6 +46,11 @@ export const pageQuery = graphql`
           ...GatsbyContentfulFluid_tracedSVG
         }
       }
+      amazonPurchaseLink
+      appleBooksPurchaseLink
+      barnesAndNoblePurchaseLink
+      koboPurchaseLink
+      googlePlayBooksPurchaseLink
     }
   }
 `
