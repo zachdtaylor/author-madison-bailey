@@ -6,36 +6,46 @@ import Layout from '../components/layout'
 import Margin from '../components/margin'
 import PageHeader from '../components/page-header'
 
-const Books = ({ data }) => {
-  return (
-    <Layout>
-      <PageHeader title="My Books" />
-      <Margin>
-        <SEO title="Books" />
-        <div className="sm:grid sm:grid-cols-2 lg:grid-cols-3">
+const Books = ({ data: { books } }) => (
+  <Layout>
+    <PageHeader title="My Books" />
+    <Margin>
+      <SEO title="My Books" />
+      <div className="sm:grid sm:grid-cols-2 lg:grid-cols-3">
+        {books.edges.map(({ node: book }) => (
           <BookPreviewCard
-            linkTo="/books/hemiola"
-            previewText={`Micah Moore is young, handsome, and newly famous. Riding high
-            from his recent success as the lead in a box office hit, the
-            world is his oyster. To him every door is open, and there are no
-            consequences he can’t charm his way out of.`}
-            title="Hemiola"
-            imgFluid={data.hemiolaCover.childImageSharp.fluid}
+            linkTo={`/books/${book.title.toLowerCase()}`}
+            previewText={book.description.content[0].content[0].value}
+            title={book.title}
+            imgFluid={book.coverArt.fluid}
           />
-        </div>
-      </Margin>
-    </Layout>
-  )
-}
+        ))}
+      </div>
+    </Margin>
+  </Layout>
+)
 
 export default Books
 
 export const pageQuery = graphql`
   query {
-    hemiolaCover: file(relativePath: { eq: "hemiola-cover.jpg" }) {
-      childImageSharp {
-        fluid(maxWidth: 800) {
-          ...GatsbyImageSharpFluid_tracedSVG
+    books: allContentfulBook(sort: { fields: [publicationDate], order: DESC }) {
+      edges {
+        node {
+          id
+          title
+          description {
+            content {
+              content {
+                value
+              }
+            }
+          }
+          coverArt {
+            fluid {
+              ...GatsbyContentfulFluid_tracedSVG
+            }
+          }
         }
       }
     }
