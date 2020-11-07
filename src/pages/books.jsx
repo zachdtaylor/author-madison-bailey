@@ -1,10 +1,10 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import SEO from '../../components/seo'
-import BookPreviewCard from '../../components/book-preview-card'
-import Layout from '../../components/layout'
-import Margin from '../../components/margin'
-import PageHeader from '../../components/page-header'
+import SEO from '../components/seo'
+import BookPreviewCard from '../components/book-preview-card'
+import Layout from '../components/layout'
+import Margin from '../components/margin'
+import PageHeader from '../components/page-header'
 
 const Books = ({ data }) => {
   return (
