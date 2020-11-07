@@ -1,14 +1,15 @@
 import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 import Button from './button'
+import BackgroundImage from 'gatsby-background-image'
 
 const HomeBanner = () => {
   const data = useStaticQuery(graphql`
     query {
       bookImage: file(relativePath: { eq: "book-close-up.jpg" }) {
-        publicURL
         childImageSharp {
-          fixed {
+          fluid {
+            ...GatsbyImageSharpFluid_tracedSVG
             aspectRatio
           }
         }
@@ -16,13 +17,13 @@ const HomeBanner = () => {
     }
   `)
   return (
-    <div
+    <BackgroundImage
+      fluid={data.bookImage.childImageSharp.fluid}
       className="w-full h-0 relative mt-4"
       style={{
-        backgroundImage: `url(${data.bookImage.publicURL})`,
         backgroundSize: 'cover',
         paddingTop: `${
-          100 / data.bookImage.childImageSharp.fixed.aspectRatio
+          100 / data.bookImage.childImageSharp.fluid.aspectRatio
         }%`,
       }}
     >
@@ -42,7 +43,7 @@ const HomeBanner = () => {
           </div>
         </div>
       </div>
-    </div>
+    </BackgroundImage>
   )
 }
 
