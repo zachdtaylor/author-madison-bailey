@@ -1,8 +1,8 @@
 import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
-import Paragraph from '../components/paragraph'
 import Button from './button'
+import RichText from './rich-text'
 
 const NewestRelease = () => {
   const { books } = useStaticQuery(graphql`
@@ -18,11 +18,7 @@ const NewestRelease = () => {
               slug
             }
             description {
-              content {
-                content {
-                  value
-                }
-              }
+              json
             }
             coverArt {
               fluid {
@@ -49,11 +45,7 @@ const NewestRelease = () => {
           />
           <div className="p-4 pb-0 md:pt-0 md:col-span-2">
             <h1 className="text-2xl font-bold">{newestBook.title}</h1>
-            {newestBook.description.content
-              .slice(0, 2)
-              .map(({ content }, index) => (
-                <Paragraph key={index}>{content[0].value}</Paragraph>
-              ))}
+            {RichText({ json: newestBook.description.json }).slice(0, 2)}
             <div className="text-right md:text-left">
               <Button.Link
                 to={newestBook.fields.slug}
