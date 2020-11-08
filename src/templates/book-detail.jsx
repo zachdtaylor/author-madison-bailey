@@ -2,10 +2,10 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import SEO from '../components/seo'
-import Paragraph from '../components/paragraph'
 import Layout from '../components/layout'
 import PageHeader from '../components/page-header'
 import PurchaseLinks from '../components/purchase-links'
+import RichText from '../components/rich-text'
 
 const BookDetail = ({ data: { book } }) => (
   <Layout>
@@ -18,9 +18,7 @@ const BookDetail = ({ data: { book } }) => (
         </div>
       </div>
       <div className="p-3 pt-5 sm:pt-0 md:col-span-2">
-        {book.description.content.map(({ content }, index) => {
-          return <Paragraph key={index}>{content[0].value}</Paragraph>
-        })}
+        <RichText json={book.description.json} />
         <hr className="my-5" />
         <PurchaseLinks {...book} />
       </div>
@@ -35,11 +33,7 @@ export const pageQuery = graphql`
     book: contentfulBook(id: { eq: $id }) {
       title
       description {
-        content {
-          content {
-            value
-          }
-        }
+        json
       }
       coverArt {
         fluid {
