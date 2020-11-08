@@ -1,4 +1,5 @@
 import React from 'react'
+import { graphql } from 'gatsby'
 import Layout from '../components/layout'
 import Margin from '../components/margin'
 import PageHeader from '../components/page-header'
@@ -16,3 +17,16 @@ const Blog = () => {
 }
 
 export default Blog
+
+export const query = graphql`
+  query {
+    blogPosts: allContentfulBlogPost {
+      edges {
+        node {
+          title
+          postDate
+        }
+      }
+    }
+  }
+`
