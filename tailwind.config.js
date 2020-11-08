@@ -24,7 +24,11 @@ module.exports = {
     extend: {
       lineHeight: {
         '32': '8rem',
-      }
+      },
+      colors: {
+        pink: '#e29c8f',
+        'pink-light': '#ffafa1'
+      },
     },
   },
   variants: {},
