@@ -4,13 +4,17 @@ import Layout from '../components/layout'
 import Margin from '../components/margin'
 import PageHeader from '../components/page-header'
 import SEO from '../components/seo'
+import BlogPostPreview from '../components/blog-post-preview'
 
-const Blog = () => {
+const Blog = ({ data: { blogPosts } }) => {
   return (
     <Layout>
       <PageHeader title="Blog" />
       <Margin>
         <SEO title="Blog" />
+        {blogPosts.edges.map(({ node: blogPost }, index) => (
+          <BlogPostPreview key={index} blogPost={blogPost} />
+        ))}
       </Margin>
     </Layout>
   )
@@ -24,7 +28,13 @@ export const query = graphql`
       edges {
         node {
           title
-          postDate
+          postDate(formatString: "MMMM DD, YYYY")
+          body {
+            json
+          }
+          fields {
+            slug
+          }
         }
       }
     }
