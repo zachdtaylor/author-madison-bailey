@@ -1,3 +1,4 @@
+const { create } = require('domain')
 const path = require('path')
 
 function slugify(string) {
@@ -18,11 +19,22 @@ function slugify(string) {
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions
   const bookDetailTemplate = path.resolve('src/templates/book-detail.jsx')
+  const blogPostTemplate = path.resolve('src/templates/blog-post.jsx')
   const result = await graphql(`
     {
-      allContentfulBook {
+      books: allContentfulBook {
         edges {
           book: node {
+            id
+            fields {
+              slug
+            }
+          }
+        }
+      }
+      blogPosts: allContentfulBlogPost {
+        edges {
+          blogPost: node {
             id
             fields {
               slug
@@ -36,11 +48,18 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     reporter.panicOnBuild('Error while running GraphQL query')
     return
   }
-  result.data.allContentfulBook.edges.forEach(({ book }) => {
+  result.data.books.edges.forEach(({ book }) => {
     createPage({
       path: book.fields.slug,
       component: bookDetailTemplate,
       context: { id: book.id }
+    })
+  })
+  result.data.blogPosts.edges.forEach(({ blogPost }) => {
+    createPage({
+      path: blogPost.fields.slug,
+      component: blogPostTemplate,
+      context: { id: blogPost.id }
     })
   })
 }
@@ -52,6 +71,13 @@ exports.onCreateNode = ({ node, actions }) => {
       node,
       name: `slug`,
       value: `/books/${slugify(node.title)}`,
+    })
+  }
+  if (node.internal.type === `ContentfulBlogPost`) {
+    createNodeField({
+      node,
+      name: `slug`,
+      value: `/blog/${slugify(node.title)}`
     })
   }
 }

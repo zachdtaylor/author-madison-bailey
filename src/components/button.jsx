@@ -5,7 +5,7 @@ const Button = {
   Link: ({ to, children, className }) => (
     <Link
       to={to}
-      className={`inline-block bg-red-300 text-white py-3 px-4 rounded shadow-md ${className}`}
+      className={`inline-block bg-pink hover:bg-pink-light text-white py-3 px-4 rounded shadow-md ${className}`}
     >
       {children}
     </Link>

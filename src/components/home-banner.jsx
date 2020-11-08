@@ -36,7 +36,7 @@ const HomeBanner = () => {
           </h1>
           <h2 className="text-2xl xs:text-4xl md:text-3xl font-bold text-gray-800">
             Clean Romances for the
-            <span className="text-red-300"> Hopeful Romantic</span>
+            <span className="text-pink"> Hopeful Romantic</span>
           </h2>
           <div className="mt-5">
             <Button.Link to="/books">Check out my books</Button.Link>
