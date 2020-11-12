@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
-import { Link, useStaticQuery } from 'gatsby'
+import { Link, useStaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import NavBarItem from './nav-bar-item'
 import MenuIcon from './menu-icon'
@@ -36,26 +36,12 @@ const Header = () => {
             mobileMenuActive && 'active'
           }`}
         >
-          <Link to="/" className="w-full">
-            <NavBarItem>
-              <span className="text-xl">Home</span>
-            </NavBarItem>
-          </Link>
-          <Link to="/books" className="w-full">
-            <NavBarItem>
-              <span className="text-xl">Books</span>
-            </NavBarItem>
-          </Link>
-          <Link to="/contact" className="w-full">
-            <NavBarItem>
-              <span className="text-xl">Contact</span>
-            </NavBarItem>
-          </Link>
-          <Link to="/blog" className="w-full">
-            <NavBarItem>
-              <span className="text-xl">Blog</span>
-            </NavBarItem>
-          </Link>
+          <NavBarItem to="/" exact>
+            Home
+          </NavBarItem>
+          <NavBarItem to="/books">Books</NavBarItem>
+          <NavBarItem to="/contact">Contact</NavBarItem>
+          <NavBarItem to="/blog">Blog</NavBarItem>
         </ul>
       </nav>
     </header>
