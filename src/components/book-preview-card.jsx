@@ -39,7 +39,7 @@ const BookPreviewCard = ({ linkTo, imgFluid, title, previewText }) => {
   })
   return (
     <Link to={linkTo}>
-      <div className="inline-block border-gray-700 rounded-md shadow-md overflow-hidden">
+      <div className="inline-block border-gray-700 rounded-md shadow-md overflow-hidden transition duration-500 ease-in-out transform hover:scale-105">
         <div className="grid grid-cols-3 grid-flow-col gap-3 ">
           <div className="row-span-5">
             <Img fluid={imgFluid} />
