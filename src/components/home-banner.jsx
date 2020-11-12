@@ -4,27 +4,14 @@ import Button from './button'
 import BackgroundImage from 'gatsby-background-image'
 
 const HomeBanner = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      bookImage: file(relativePath: { eq: "book-close-up.jpg" }) {
-        childImageSharp {
-          fluid {
-            ...GatsbyImageSharpFluid_tracedSVG
-            aspectRatio
-          }
-        }
-      }
-    }
-  `)
+  const { bookImage } = useQueryData()
   return (
     <BackgroundImage
-      fluid={data.bookImage.childImageSharp.fluid}
+      fluid={bookImage.childImageSharp.fluid}
       className="w-full h-0 relative mt-4"
       style={{
         backgroundSize: 'cover',
-        paddingTop: `${
-          100 / data.bookImage.childImageSharp.fluid.aspectRatio
-        }%`,
+        paddingTop: `${100 / bookImage.childImageSharp.fluid.aspectRatio}%`,
       }}
     >
       <div className="absolute inset-0 py-4 px-6 md:p-8">
@@ -48,3 +35,18 @@ const HomeBanner = () => {
 }
 
 export default HomeBanner
+
+function useQueryData() {
+  return useStaticQuery(graphql`
+    query {
+      bookImage: file(relativePath: { eq: "book-close-up.jpg" }) {
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid_tracedSVG
+            aspectRatio
+          }
+        }
+      }
+    }
+  `)
+}

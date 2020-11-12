@@ -5,31 +5,7 @@ import Button from './button'
 import RichText from './rich-text'
 
 const NewestRelease = () => {
-  const { books } = useStaticQuery(graphql`
-    query {
-      books: allContentfulBook(
-        sort: { fields: [publicationDate], order: DESC }
-        limit: 1
-      ) {
-        edges {
-          node {
-            title
-            fields {
-              slug
-            }
-            description {
-              json
-            }
-            coverArt {
-              fluid {
-                ...GatsbyContentfulFluid_tracedSVG
-              }
-            }
-          }
-        }
-      }
-    }
-  `)
+  const { books } = useQueryData()
   const newestBook = books.edges[0].node
   return (
     <div className="px-6 py-2">
@@ -62,3 +38,31 @@ const NewestRelease = () => {
 }
 
 export default NewestRelease
+
+function useQueryData() {
+  return useStaticQuery(graphql`
+    query {
+      books: allContentfulBook(
+        sort: { fields: [publicationDate], order: DESC }
+        limit: 1
+      ) {
+        edges {
+          node {
+            title
+            fields {
+              slug
+            }
+            description {
+              json
+            }
+            coverArt {
+              fluid {
+                ...GatsbyContentfulFluid_tracedSVG
+              }
+            }
+          }
+        }
+      }
+    }
+  `)
+}

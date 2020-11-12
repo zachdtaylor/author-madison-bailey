@@ -6,19 +6,17 @@ import PageHeader from '../components/page-header'
 import SEO from '../components/seo'
 import BlogPostPreview from '../components/blog-post-preview'
 
-const Blog = ({ data: { blogPosts } }) => {
-  return (
-    <Layout>
-      <PageHeader title="Blog" />
-      <Margin>
-        <SEO title="Blog" />
-        {blogPosts.edges.map(({ node: blogPost }, index) => (
-          <BlogPostPreview key={index} blogPost={blogPost} />
-        ))}
-      </Margin>
-    </Layout>
-  )
-}
+const Blog = ({ data: { blogPosts } }) => (
+  <Layout>
+    <PageHeader title="Blog" />
+    <Margin>
+      <SEO title="Blog" />
+      {blogPosts.edges.map(({ node: blogPost }, index) => (
+        <BlogPostPreview key={index} blogPost={blogPost} />
+      ))}
+    </Margin>
+  </Layout>
+)
 
 export default Blog
 
