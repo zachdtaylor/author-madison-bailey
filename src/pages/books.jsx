@@ -12,8 +12,9 @@ const Books = ({ data: { books } }) => (
     <Margin>
       <SEO title="My Books" />
       <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-        {books.edges.map(({ node: book }) => (
+        {books.edges.map(({ node: book }, index) => (
           <BookPreviewCard
+            key={index}
             linkTo={book.fields.slug}
             previewText={book.description.content[0].content[0].value}
             title={book.title}
