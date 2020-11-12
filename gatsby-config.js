@@ -5,8 +5,11 @@ module.exports = {
     title: `Author Madison Bailey`,
     description: `Madison Bailey is an author writing clean romances for the hopeful romantic.`,
     author: `@authormadisonbailey`,
+    siteUrl: `https://author-madison-bailey.netlify.app`
   },
   plugins: [
+    `gatsby-plugin-robots-txt`,
+    `gatsby-plugin-sitemap`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
