@@ -7,6 +7,7 @@ module.exports = {
     author: `@authormadisonbailey`,
   },
   plugins: [
+    `gatsby-plugin-robots-txt`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
