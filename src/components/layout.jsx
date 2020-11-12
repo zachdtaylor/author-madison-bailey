@@ -11,24 +11,22 @@ import PropTypes from 'prop-types'
 import Header from './header'
 import Footer from './footer'
 
-const Layout = ({ children, noHeader }) => {
-  return (
-    <>
-      <div
-        style={{
-          minHeight: '100%',
-          display: 'grid',
-          gridTemplateRows: 'auto 1fr auto',
-          gridTemplateColumns: '100%',
-        }}
-      >
-        {!noHeader && <Header />}
-        <main>{children}</main>
-        <Footer />
-      </div>
-    </>
-  )
-}
+const Layout = ({ children, noHeader }) => (
+  <>
+    <div
+      style={{
+        minHeight: '100%',
+        display: 'grid',
+        gridTemplateRows: 'auto 1fr auto',
+        gridTemplateColumns: '100%',
+      }}
+    >
+      {!noHeader && <Header />}
+      <main>{children}</main>
+      <Footer />
+    </div>
+  </>
+)
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
