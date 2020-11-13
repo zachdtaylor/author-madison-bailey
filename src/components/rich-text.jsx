@@ -1,6 +1,6 @@
 import React from 'react'
 import { BLOCKS, MARKS } from '@contentful/rich-text-types'
-import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
+import { renderRichText } from 'gatsby-source-contentful/rich-text'
 import Paragraph from './paragraph'
 
 const options = {
@@ -12,6 +12,6 @@ const options = {
   },
 }
 
-const RichText = ({ json }) => documentToReactComponents(json, options)
+const RichText = ({ field }) => renderRichText(field, options)
 
 export default RichText
