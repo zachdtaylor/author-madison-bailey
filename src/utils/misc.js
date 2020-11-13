@@ -1,4 +1,3 @@
-
 function usePathname() {
   if (typeof window === 'undefined') {
     return ''
