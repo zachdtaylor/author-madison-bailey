@@ -6,4 +6,9 @@ function usePathname() {
   return window.location.pathname
 }
 
-export { usePathname }
+function getFirstParagraph({ raw }) {
+  const json = JSON.parse(raw)
+  return json.content[0].content[0].value
+}
+
+export { usePathname, getFirstParagraph }
