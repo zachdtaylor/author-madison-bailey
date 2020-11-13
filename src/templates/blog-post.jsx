@@ -13,7 +13,7 @@ const BlogPost = ({ data: { blogPost } }) => (
     <Margin>
       <div>
         <div className="p-3 pt-5 sm:pt-0 md:col-span-2">
-          <RichText json={blogPost.body.json} />
+          <RichText field={blogPost.body} />
         </div>
       </div>
     </Margin>
@@ -27,7 +27,7 @@ export const pageQuery = graphql`
     blogPost: contentfulBlogPost(id: { eq: $id }) {
       title
       body {
-        json
+        raw
       }
     }
   }

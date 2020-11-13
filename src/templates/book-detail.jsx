@@ -18,7 +18,7 @@ const BookDetail = ({ data: { book } }) => (
         </div>
       </div>
       <div className="p-3 pt-5 sm:pt-0 md:col-span-2">
-        <RichText json={book.description.json} />
+        <RichText field={book.description} />
         <hr className="my-5" />
         <PurchaseLinks {...book} />
       </div>
@@ -33,7 +33,7 @@ export const pageQuery = graphql`
     book: contentfulBook(id: { eq: $id }) {
       title
       description {
-        json
+        raw
       }
       coverArt {
         fluid {

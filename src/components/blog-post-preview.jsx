@@ -10,7 +10,7 @@ const BlogPostPreview = ({ blogPost }) => (
       </h1>
     </Link>
     <p>{blogPost.postDate}</p>
-    {RichText({ json: blogPost.body.json })[0]}
+    {RichText({ field: blogPost.body })[0]}
   </div>
 )
 

@@ -21,7 +21,7 @@ const NewestRelease = () => {
           />
           <div className="p-4 pb-0 md:pt-0 md:col-span-2">
             <h1 className="text-2xl font-bold">{newestBook.title}</h1>
-            {RichText({ json: newestBook.description.json }).slice(0, 2)}
+            {RichText({ field: newestBook.description }).slice(0, 2)}
             <div className="text-right md:text-left">
               <Button.Link
                 to={newestBook.fields.slug}
@@ -53,7 +53,7 @@ function useQueryData() {
               slug
             }
             description {
-              json
+              raw
             }
             coverArt {
               fluid {

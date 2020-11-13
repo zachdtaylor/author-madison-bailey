@@ -28,7 +28,7 @@ export const query = graphql`
           title
           postDate(formatString: "MMMM DD, YYYY")
           body {
-            json
+            raw
           }
           fields {
             slug

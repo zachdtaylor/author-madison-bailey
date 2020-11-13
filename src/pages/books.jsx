@@ -5,6 +5,7 @@ import BookPreviewCard from '../components/book-preview-card'
 import Layout from '../components/layout'
 import Margin from '../components/margin'
 import PageHeader from '../components/page-header'
+import { getFirstParagraph } from '../utils/misc'
 
 const Books = ({ data: { books } }) => (
   <Layout>
@@ -16,7 +17,7 @@ const Books = ({ data: { books } }) => (
           <BookPreviewCard
             key={index}
             linkTo={book.fields.slug}
-            previewText={book.description.content[0].content[0].value}
+            previewText={getFirstParagraph(book.description)}
             title={book.title}
             imgFluid={book.coverArt.fluid}
           />
@@ -39,11 +40,7 @@ export const pageQuery = graphql`
             slug
           }
           description {
-            content {
-              content {
-                value
-              }
-            }
+            raw
           }
           coverArt {
             fluid {
