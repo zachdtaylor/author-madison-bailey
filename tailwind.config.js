@@ -25,8 +25,9 @@ module.exports = {
         '32': '8rem',
       },
       colors: {
-        pink: '#e29c8f',
-        'pink-light': '#ffafa1',
+        primary: '#afc3c0',
+        'primary-light': '#d1dbd9',
+        'primary-dark': '#688d87',
       },
     },
   },

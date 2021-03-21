@@ -29,7 +29,7 @@ module.exports = {
         background_color: `#ffb3b3`,
         theme_color: `#ffb3b3`,
         display: `minimal-ui`,
-        icon: `src/images/Madison-Bailey-Submark.png`, // This path is relative to the root of the site.
+        icon: `src/images/Madison-Bailey-Logo-2.png`, // This path is relative to the root of the site.
       },
     },
     {

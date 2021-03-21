@@ -6,7 +6,7 @@ import 'twin.macro'
 const BlogPostPreview = ({ blogPost }) => (
   <div>
     <Link to={blogPost.fields.slug}>
-      <h1 tw="text-pink text-3xl hover:text-pink-light transition duration-500 ease-in-out py-3 inline-block">
+      <h1 tw="text-primary text-3xl hover:text-primary-dark transition duration-500 ease-in-out py-3 inline-block">
         {blogPost.title}
       </h1>
     </Link>

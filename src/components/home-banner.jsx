@@ -24,7 +24,7 @@ const HomeBanner = () => {
           </h1>
           <h2 tw="text-2xl xs:text-4xl md:text-3xl font-bold text-gray-800">
             Clean Romances for the
-            <span tw="text-pink"> Hopeful Romantic</span>
+            <span tw="text-primary-dark"> Hopeful Romantic</span>
           </h2>
           <div tw="mt-5">
             <Button.Link to="/books">Check out my books</Button.Link>

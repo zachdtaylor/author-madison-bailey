@@ -8,8 +8,10 @@ const NavBarItem = ({ to, exact, children }) => {
   const urlMatches = exact ? pathname === to : pathname.startsWith(to)
   return (
     <Link to={to} tw="w-full">
-      <li tw="py-4 border-b-2 md:mx-4 md:py-2 md:border-b-0 hover:text-pink-light transition duration-500 ease-in-out">
-        <span css={[tw`text-xl`, urlMatches && tw`text-pink`]}>{children}</span>
+      <li tw="py-4 border-b-2 md:mx-4 md:py-2 md:border-b-0 hover:text-primary-dark transition duration-200 ease-in-out">
+        <span css={[tw`text-xl`, urlMatches && tw`text-primary-dark`]}>
+          {children}
+        </span>
       </li>
     </Link>
   )

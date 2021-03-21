@@ -63,7 +63,7 @@ export default Header
 function useQueryData() {
   return useStaticQuery(graphql`
     query {
-      logo: file(relativePath: { eq: "Madison-Bailey-Submark.png" }) {
+      logo: file(relativePath: { eq: "Madison-Bailey-Logo.png" }) {
         childImageSharp {
           fluid(maxWidth: 800) {
             ...GatsbyImageSharpFluid_tracedSVG

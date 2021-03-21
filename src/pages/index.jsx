@@ -25,7 +25,9 @@ export default IndexPage
 
 export const pageQuery = graphql`
   query ImageQuery {
-    headerImage: file(relativePath: { eq: "Madison-Bailey-Logo-1.png" }) {
+    headerImage: file(
+      relativePath: { eq: "Madison-Bailey-Logo-Rectangle.png" }
+    ) {
       childImageSharp {
         fluid(maxWidth: 1240) {
           ...GatsbyImageSharpFluid_tracedSVG

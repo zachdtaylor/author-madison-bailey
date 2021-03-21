@@ -7,7 +7,7 @@ const Button = {
     <Link
       to={to}
       css={[
-        tw`inline-block bg-pink hover:bg-pink-light ease-in-out transition duration-500 text-white py-3 px-4 rounded shadow-md`,
+        tw`inline-block bg-primary-dark hover:bg-primary ease-in-out transition duration-200 text-white py-3 px-4 rounded shadow-md`,
         extraMargin && tw`mt-3 mb-5 md:my-3`,
       ]}
     >
