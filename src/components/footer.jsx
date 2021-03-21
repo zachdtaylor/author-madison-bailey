@@ -2,7 +2,7 @@ import React from 'react'
 import 'twin.macro'
 
 const Footer = () => (
-  <footer tw="text-center py-12 px-3 bg-gray-400 text-gray-800">
+  <footer tw="text-center py-12 px-3 bg-gray-300 text-gray-800">
     <p tw="mb-2">
       <a href="mailto:authormadisonbailey@gmail.com" tw="hover:text-gray-200">
         Email Me
