@@ -1,16 +1,15 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
-
 import React from 'react'
 import PropTypes from 'prop-types'
-
 import Header from './header'
 import Footer from './footer'
-import { GlobalStyles } from 'twin.macro'
+import tw, { GlobalStyles } from 'twin.macro'
+import { Global, css } from '@emotion/react'
+
+const globalStyles = css`
+  body {
+    ${tw`bg-gray-100 text-gray-900`}
+  }
+`
 
 const Layout = ({ children, noHeader }) => (
   <div
@@ -22,6 +21,7 @@ const Layout = ({ children, noHeader }) => (
     }}
   >
     <GlobalStyles />
+    <Global styles={globalStyles} />
     {!noHeader && <Header />}
     <main>{children}</main>
     <Footer />

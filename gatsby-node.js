@@ -1,12 +1,15 @@
-const { create } = require('domain')
 const path = require('path')
 
 function slugify(string) {
-  const a = 'àáâäæãåāăąçćčđďèéêëēėęěğǵḧîïíīįìłḿñńǹňôöòóœøōõőṕŕřßśšşșťțûüùúūǘůűųẃẍÿýžźż·/_,:;'
-  const b = 'aaaaaaaaaacccddeeeeeeeegghiiiiiilmnnnnoooooooooprrsssssttuuuuuuuuuwxyyzzz------'
+  const a =
+    'àáâäæãåāăąçćčđďèéêëēėęěğǵḧîïíīįìłḿñńǹňôöòóœøōõőṕŕřßśšşșťțûüùúūǘůűųẃẍÿýžźż·/_,:;'
+  const b =
+    'aaaaaaaaaacccddeeeeeeeegghiiiiiilmnnnnoooooooooprrsssssttuuuuuuuuuwxyyzzz------'
   const p = new RegExp(a.split('').join('|'), 'g')
 
-  return string.toString().toLowerCase()
+  return string
+    .toString()
+    .toLowerCase()
     .replace(/\s+/g, '-') // Replace spaces with -
     .replace(p, c => b.charAt(a.indexOf(c))) // Replace special characters
     .replace(/&/g, '-and-') // Replace & with 'and'
@@ -52,14 +55,14 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     createPage({
       path: book.fields.slug,
       component: bookDetailTemplate,
-      context: { id: book.id }
+      context: { id: book.id },
     })
   })
   result.data.blogPosts.edges.forEach(({ blogPost }) => {
     createPage({
       path: blogPost.fields.slug,
       component: blogPostTemplate,
-      context: { id: blogPost.id }
+      context: { id: blogPost.id },
     })
   })
 }
@@ -77,7 +80,7 @@ exports.onCreateNode = ({ node, actions }) => {
     createNodeField({
       node,
       name: `slug`,
-      value: `/blog/${slugify(node.title)}`
+      value: `/blog/${slugify(node.title)}`,
     })
   }
 }
