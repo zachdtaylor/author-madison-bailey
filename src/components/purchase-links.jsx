@@ -1,6 +1,7 @@
 import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 import PurchaseLink from './purchase-link'
+import 'twin.macro'
 
 const PurchaseLinks = ({
   amazonPurchaseLink,
@@ -18,8 +19,8 @@ const PurchaseLinks = ({
   } = useQueryData()
   return (
     <div>
-      <h2 className="text-xl mb-5">Buy it now</h2>
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 mt-3">
+      <h2 tw="text-xl mb-5">Buy it now</h2>
+      <div tw="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 mt-3">
         <PurchaseLink
           link={amazonPurchaseLink}
           imgURL={amazonIcon.publicURL}

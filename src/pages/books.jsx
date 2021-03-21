@@ -6,13 +6,14 @@ import Layout from '../components/layout'
 import Margin from '../components/margin'
 import PageHeader from '../components/page-header'
 import { getFirstParagraph } from '../utils/misc'
+import 'twin.macro'
 
 const Books = ({ data: { books } }) => (
   <Layout>
     <PageHeader title="My Books" />
     <Margin>
       <SEO title="My Books" />
-      <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      <div tw="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {books.edges.map(({ node: book }, index) => (
           <BookPreviewCard
             key={index}

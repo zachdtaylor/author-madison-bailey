@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'gatsby'
 import Img from 'gatsby-image'
 import ClampLines from 'react-clamp-lines'
+import 'twin.macro'
 
 // sm: 640
 // md: 768
@@ -39,15 +40,15 @@ const BookPreviewCard = ({ linkTo, imgFluid, title, previewText }) => {
   })
   return (
     <Link to={linkTo}>
-      <div className="inline-block border-gray-700 rounded-md shadow-md overflow-hidden transition duration-500 ease-in-out transform hover:scale-105">
-        <div className="grid grid-cols-3 grid-flow-col gap-3 ">
-          <div className="row-span-5">
+      <div tw="inline-block border-gray-700 rounded-md shadow-md overflow-hidden transition duration-500 ease-in-out transform hover:scale-105">
+        <div tw="grid grid-cols-3 grid-flow-col gap-3 ">
+          <div tw="row-span-5">
             <Img fluid={imgFluid} />
           </div>
-          <div className="col-span-2 row-span-4 pr-2">
-            <h1 className="text-2xl">{title}</h1>
+          <div tw="col-span-2 row-span-4 pr-2">
+            <h1 tw="text-2xl">{title}</h1>
             <ClampLines
-              className="text-sm"
+              tw="text-sm"
               text={previewText}
               lines={previewLines}
               ellipsis="..."

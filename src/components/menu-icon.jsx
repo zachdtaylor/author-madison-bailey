@@ -1,11 +1,12 @@
 import React from 'react'
+import 'twin.macro'
 
-const MenuIcon = ({ className }) => (
+const MenuIcon = () => (
   <svg
     version="1.1"
     baseProfile="full"
     viewBox="0 0 100 100"
-    className={`w-full h-full ${className}`}
+    tw="w-full h-full"
     xmlns="http://www.w3.org/2000/svg"
   >
     <rect x="0" y="0" rx="5" width="100%" height="100%" fill="#f7fafc" />

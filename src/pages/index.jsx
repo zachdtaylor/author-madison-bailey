@@ -5,14 +5,15 @@ import Img from 'gatsby-image'
 import Layout from '../components/layout'
 import NewestRelease from '../components/newest-release'
 import HomeBanner from '../components/home-banner'
+import 'twin.macro'
 
 const IndexPage = ({ data }) => (
   <Layout noHeader>
-    <div className="pt-3 pb-5">
+    <div tw="pt-3 pb-5">
       <SEO title="Home" />
       <Img
         fluid={data.headerImage.childImageSharp.fluid}
-        className="md:w-48 md:mx-auto"
+        tw="md:w-48 md:mx-auto"
       />
       <HomeBanner />
       <NewestRelease />

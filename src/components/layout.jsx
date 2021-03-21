@@ -10,22 +10,22 @@ import PropTypes from 'prop-types'
 
 import Header from './header'
 import Footer from './footer'
+import { GlobalStyles } from 'twin.macro'
 
 const Layout = ({ children, noHeader }) => (
-  <>
-    <div
-      style={{
-        minHeight: '100%',
-        display: 'grid',
-        gridTemplateRows: 'auto 1fr auto',
-        gridTemplateColumns: '100%',
-      }}
-    >
-      {!noHeader && <Header />}
-      <main>{children}</main>
-      <Footer />
-    </div>
-  </>
+  <div
+    style={{
+      minHeight: '100%',
+      display: 'grid',
+      gridTemplateRows: 'auto 1fr auto',
+      gridTemplateColumns: '100%',
+    }}
+  >
+    <GlobalStyles />
+    {!noHeader && <Header />}
+    <main>{children}</main>
+    <Footer />
+  </div>
 )
 
 Layout.propTypes = {
