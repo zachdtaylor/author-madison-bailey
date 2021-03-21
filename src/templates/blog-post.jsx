@@ -5,6 +5,7 @@ import Layout from '../components/layout'
 import PageHeader from '../components/page-header'
 import RichText from '../components/rich-text'
 import Margin from '../components/margin'
+import 'twin.macro'
 
 const BlogPost = ({ data: { blogPost } }) => (
   <Layout>
@@ -12,7 +13,7 @@ const BlogPost = ({ data: { blogPost } }) => (
     <SEO title={blogPost.title} />
     <Margin>
       <div>
-        <div className="p-3 pt-5 sm:pt-0 md:col-span-2">
+        <div tw="p-3 pt-5 sm:pt-0 md:col-span-2">
           <RichText field={blogPost.body} />
         </div>
       </div>

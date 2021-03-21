@@ -1,25 +1,23 @@
 import React from 'react'
+import 'twin.macro'
 
 const Footer = () => (
-  <footer className="text-center py-12 px-3 bg-gray-400 text-black-800">
-    <p className="mb-2">
-      <a
-        href="mailto:authormadisonbailey@gmail.com"
-        className="hover:text-gray-200"
-      >
+  <footer tw="text-center py-12 px-3 bg-gray-300 text-gray-800">
+    <p tw="mb-2">
+      <a href="mailto:authormadisonbailey@gmail.com" tw="hover:text-gray-200">
         Email Me
       </a>
       &nbsp;&bull;&nbsp;
       <a
         href="https://www.instagram.com/authormadisonbailey/"
-        className="hover:text-gray-200"
+        tw="hover:text-gray-200"
       >
         Instagram
       </a>
       &nbsp;&bull;&nbsp;
       <a
         href="https://m.facebook.com/authormadisonbailey/?__nodl&ref=m.facebook.com&_rdr"
-        className="hover:text-gray-200"
+        tw="hover:text-gray-200"
       >
         Facebook
       </a>

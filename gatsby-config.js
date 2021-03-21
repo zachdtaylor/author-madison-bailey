@@ -1,11 +1,11 @@
-require("dotenv").config()
+require('dotenv').config()
 
 module.exports = {
   siteMetadata: {
     title: `Author Madison Bailey`,
     description: `Madison Bailey is an author writing clean romances for the hopeful romantic.`,
     author: `@authormadisonbailey`,
-    siteUrl: `https://author-madison-bailey.netlify.app`
+    siteUrl: `https://author-madison-bailey.netlify.app`,
   },
   plugins: [
     `gatsby-plugin-robots-txt`,
@@ -29,7 +29,7 @@ module.exports = {
         background_color: `#ffb3b3`,
         theme_color: `#ffb3b3`,
         display: `minimal-ui`,
-        icon: `src/images/Madison-Bailey-Submark.png`, // This path is relative to the root of the site.
+        icon: `src/images/Madison-Bailey-Logo-2.png`, // This path is relative to the root of the site.
       },
     },
     {
@@ -37,10 +37,10 @@ module.exports = {
       options: {
         spaceId: process.env.CONTENTFUL_SPACE_ID,
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
-        host: process.env.CONTENTFUL_HOST
-      }
+        host: process.env.CONTENTFUL_HOST,
+      },
     },
-    `gatsby-plugin-postcss`,
+    { resolve: `gatsby-plugin-emotion` },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
